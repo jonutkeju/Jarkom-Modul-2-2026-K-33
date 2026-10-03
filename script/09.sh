@@ -13,7 +13,7 @@
     up /etc/init.d/apache2 restart 2>/dev/null
 
 # Coba akses webnya dri klien bebas
-curl -s http://10.80.5.4/arsip/
-curl -s http://10.80.5.5/arsip/
+curl -s http://obladi.Kel33.com/arsip/
+curl -s http://desmond.Kel33.com/arsip/
 
 # Outputnya kudu html

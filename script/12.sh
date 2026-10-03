@@ -16,6 +16,8 @@
 # Test authorizationnya ke klien bebas
 # Uji tanpa auth
 curl -i http://www.Kel33.com/admin/
+# Uji kalo pwnya salah
+curl -i -u prabs:'pakar_pinter_beneran_pinter' http://www.Kel33.com/admin/
 # Uji dengan auth
 curl -i -u prabs:'pakar_pinter_jadi_gob***' http://www.Kel33.com/admin/
-# Yang pertama harusnya 401 Unauthorized, yang kedua kudu 200 OK
+# Yang pertama harusnya 401 Unauthorized, yang ketiga kudu 200 OK

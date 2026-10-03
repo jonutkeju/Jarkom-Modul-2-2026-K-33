@@ -1,29 +1,14 @@
-# Conf Slave ke Tedd
-    up echo 'zone "Kel33.com" {' > /etc/bind/named.conf.local
-    up echo '    type slave;' >> /etc/bind/named.conf.local
-    up echo '    file "/var/cache/bind/db.Kel33.com";' >> /etc/bind/named.conf.local
-    up echo '    masters { 10.80.5.2; };' >> /etc/bind/named.conf.local
-    up echo '};' >> /etc/bind/named.conf.local
-    up echo '' >> /etc/bind/named.conf.local
-    up echo 'zone "3.80.10.in-addr.arpa" {' >> /etc/bind/named.conf.local
-    up echo '    type slave;' >> /etc/bind/named.conf.local
-    up echo '    file "/var/cache/bind/db.10.80.3";' >> /etc/bind/named.conf.local
-    up echo '    masters { 10.80.5.2; };' >> /etc/bind/named.conf.local
-    up echo '};' >> /etc/bind/named.conf.local
-    up echo '' >> /etc/bind/named.conf.local
-    up echo 'zone "4.80.10.in-addr.arpa" {' >> /etc/bind/named.conf.local
-    up echo '    type slave;' >> /etc/bind/named.conf.local
-    up echo '    file "/var/cache/bind/db.10.80.4";' >> /etc/bind/named.conf.local
-    up echo '    masters { 10.80.5.2; };' >> /etc/bind/named.conf.local
-    up echo '};' >> /etc/bind/named.conf.local
-    up echo '' >> /etc/bind/named.conf.local
-    up echo 'zone "5.80.10.in-addr.arpa" {' >> /etc/bind/named.conf.local
-    up echo '    type slave;' >> /etc/bind/named.conf.local
-    up echo '    file "/var/cache/bind/db.10.80.5";' >> /etc/bind/named.conf.local
-    up echo '    masters { 10.80.5.2; };' >> /etc/bind/named.conf.local
-    up echo '};' >> /etc/bind/named.conf.local
+# Conf masing-masing node
+    up hostname (nama node)
+    up echo "(nama node)" > /etc/hostname
 
-# Cek Slave Zonenya di Tedd
-ls -la /var/cache/bind/
+# Cek di node masing2
+hostname
+cat /etc/hostname
+# Harusnya ada detail hostnya
 
-# Harusnya mirip sama 04.sh karna zona hasil replika master
+# Cek di node manapun
+for host in rootkit alpha beta gamma delta epsilon abbey penny obladi desmond oblada molly; do
+    echo -n "$host.Kel33.com -> "; dig +short $host.Kel33.com A
+done
+# Harusnya ada IP masing-masing node sesuai soal

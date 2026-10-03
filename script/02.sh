@@ -1,10 +1,17 @@
-# Conf setiap node
-    up hostname (nama node)
-    up echo "(nama node)" > /etc/hostname
-    up echo -e "nameserver 10.80.5.2\nnameserver 10.80.5.3\nnameserver 192.168.122.1" > /etc/resolv.conf
+# Di Rootkit Terminal
 
-# Cek identitasnya di setiap node
-hostname
-cat /etc/resolv.conf
+nano /root/.bashrc
+dhclient eth0 2>/dev/null
+iptables -F
+iptables -t nat -F
+sysctl -w net.ipv4.ip_forward=1
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 
-# HARUSNYA outputnya sama
+# Cek di Rootkit Terminal setelah restart
+cat /proc/sys/net/ipv4/ip_forward
+iptables -t nat -L POSTROUTING -n -v 
+# Hasilnya harus ada MASQUERADE nya
+
+# Cek di klien bebas
+ping -c 3 192.168.122.1
+# Kalo bisa berarti aman kingg

@@ -11,7 +11,9 @@
     up /etc/init.d/nginx restart 2>/dev/null
 
 # Cek lewat klien bebas
-curl -s http://10.80.5.6/profil
-curl -s http://10.80.5.7/profil
+curl -s http://oblada.Kel33.com/
+curl -s http://oblada.Kel33.com/profil
+curl -s http://molly.Kel33.com/
+curl -s http://molly.Kel33.com/profil
 
 # Outputnya juga html, yang penting jangan error

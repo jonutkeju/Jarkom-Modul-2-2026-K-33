@@ -7,6 +7,7 @@
     up echo '    RewriteRule ^(.*)$ http://www.Kel33.com$1 [R=301,L]' >> /etc/apache2/sites-available/redirect-penny.conf
     up echo '</VirtualHost>' >> /etc/apache2/sites-available/redirect-penny.conf
     up a2ensite redirect-penny 2>/dev/null
+    up /etc/init.d/apache2 restart 2>/dev/null
 
 # Conf ke Abbey
     up echo 'server {' >> /etc/nginx/sites-available/core-proxy
@@ -14,6 +15,7 @@
     up echo '    server_name abbey.Kel33.com 10.80.3.2;' >> /etc/nginx/sites-available/core-proxy
     up echo '    return 302 http://static.Kel33.com$request_uri;' >> /etc/nginx/sites-available/core-proxy
     up echo '}' >> /etc/nginx/sites-available/core-proxy
+    up /etc/init.d/nginx restart 2>/dev/null
 
 # Test Redirectionnya lewat Klien Bebas
 # Uji Penny:
