@@ -1,4 +1,4 @@
-# JARKOM MODUL 2| K-33
+# JARKOM MODUL 2 | K-33
 DNS, Master & Slave, Reverse Proxy, dll.
 
 ## Anggota
